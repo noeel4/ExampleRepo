@@ -12,15 +12,28 @@
 import random 
 
 class Pokemon:
+    
+###~~~~~~~~~~~~~~~~~~~~~~WE GOOGLED THIS~~~~~~~~~~~~~~~~~~~###
+### SOURCE: Charles Marsh, BCS Princeton University        ###
+### URL: https://www.toptal.com/python/python-class-attributes-an-overly-thorough-guide ###
+### INFO TAKEN: Class vs instance attributes; specifically,
+###             we didn't know how to set a global attribute.
+###             We mistakenly prefixed our variables with 'self.'
+    
+    pokemon_type="NORMAL"
+
+###~~~~~~~~~~END OF GOOGLED CONTENT~~~~~~~~~~~~~~~~~~~~~~~~###
+    
     def __init__(self,name):
+        
         self.name=name
-        self.pokemon_type="NORMAL"
         self.max_hp=random.randint(0,100)
         self.current_hp=self.max_hp
         self.attack_power=random.randint(0,30)
         self.defensive_power=random.randint(0,50)
         self.fainted=False
         self.revives=1
+        
     def printStats(self):
         print(self.name.upper(),"Type:",self.pokemon_type)
         print("HP:",self.current_hp,"/",self.max_hp)
@@ -51,9 +64,9 @@ class Pokemon:
 
 class Squirtle(Pokemon):
 
-    self.type="WATER"
+    pokemon_type="WATER"
 
-    def self.attack(opponent):
+    def selfAttack(opponent):
         if(opponent.type == "FIRE"):
             print("super effective!")
             self.attack*2
@@ -63,9 +76,9 @@ class Squirtle(Pokemon):
 
 class Charizard(Pokemon):
 
-    self.type="FIRE"
+    pokemon_type="FIRE"
 
-    def self.attack(opponent):
+    def selfAttack(opponent):
         if(opponent.type == "GRASS"):
             print("super-effective")
             self.attack * 2
@@ -76,9 +89,9 @@ class Charizard(Pokemon):
 
 class Ivysaur(Pokemon):
 
-    self.type="GRASS"
+    pokemon_type="GRASS"
 
-    def self.attack(opponent):
+    def selfAttack(opponent):
         if(opponent.type == "WATER"):
             print("super-effective")
             self.attack * 2
